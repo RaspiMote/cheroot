@@ -181,7 +181,7 @@ class ConnectionManager:
         while self._serving:
             time.sleep(0.01)
 
-    def run(self, expiration_interval):
+    def run(self, expiration_interval, verbose):
         """Run the connections selector indefinitely.
 
         Args:
@@ -198,13 +198,13 @@ class ConnectionManager:
         """
         self._serving = True
         try:
-            self._run(expiration_interval)
+            self._run(expiration_interval, verbose)
         finally:
             self._serving = False
 
-    def _run(self, expiration_interval):
+    def _run(self, expiration_interval, verbose):
         last_expiration_check = time.time()
-
+        k = False
         while not self._stop_requested:
             try:
                 active_list = self._selector.select(timeout=0.01)
@@ -223,8 +223,11 @@ class ConnectionManager:
                     # has read from it and returned it via put()
                     self._selector.unregister(sock_fd)
                     self.server.process_conn(conn)
-
+            if k == False and verbose == True:
+                print("Cheroot is serving.")
+                k = True
             now = time.time()
+            
             if (now - last_expiration_check) > expiration_interval:
                 self._expire()
                 last_expiration_check = now

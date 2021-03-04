@@ -1803,11 +1803,11 @@ class HTTPServer:
         self.ready = True
         self._start_time = time.time()
 
-    def serve(self):
+    def serve(self, verbose):
         """Serve requests, after invoking :func:`prepare()`."""
         while self.ready and not self.interrupt:
             try:
-                self._connections.run(self.expiration_interval)
+                self._connections.run(self.expiration_interval, verbose)
             except (KeyboardInterrupt, SystemExit):
                 raise
             except Exception:
@@ -1824,7 +1824,7 @@ class HTTPServer:
             if self.interrupt:
                 raise self.interrupt
 
-    def start(self):
+    def start(self, verbose):
         """Run the server forever.
 
         It is shortcut for invoking :func:`prepare()` then :func:`serve()`.
@@ -1834,7 +1834,7 @@ class HTTPServer:
         # If you're using this server with another framework, you should
         # trap those exceptions in whatever code block calls start().
         self.prepare()
-        self.serve()
+        self.serve(verbose)
 
     @contextlib.contextmanager
     def _run_in_thread(self):
