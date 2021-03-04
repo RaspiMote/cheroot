@@ -1,1 +1,1 @@
-ref-names: $Format:%D$
+ref-names: tag: v8.5.2, maint/8.x
