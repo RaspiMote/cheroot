@@ -49,6 +49,7 @@ class Server(server.HTTPServer):
         max=-1, request_queue_size=5, timeout=10, shutdown_timeout=5,
         accepted_queue_size=-1, accepted_queue_timeout=10,
         peercreds_enabled=False, peercreds_resolve_enabled=False,
+        verbose=False
     ):
         """Initialize WSGI Server instance.
 
@@ -85,6 +86,8 @@ class Server(server.HTTPServer):
             accepted_queue_size=accepted_queue_size,
             accepted_queue_timeout=accepted_queue_timeout,
         )
+        if verbose == True:
+            print(f'Configured web server to serve on host {bind_addr[0]} and on port {bind_addr[1]}.')
 
     @property
     def numthreads(self):
