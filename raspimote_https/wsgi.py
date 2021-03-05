@@ -2,7 +2,7 @@
 
 Simplest example on how to use this server::
 
-    from cheroot import wsgi
+    from raspimote_https import wsgi
 
     def my_crazy_app(environ, start_response):
         status = '200 OK'

@@ -12,9 +12,9 @@ import time
 import pytest
 from six.moves import http_client
 
-import cheroot.server
-from cheroot.test import webtest
-import cheroot.wsgi
+import raspimote_https.server
+from raspimote_https.test import webtest
+import raspimote_https.wsgi
 
 EPHEMERAL_PORT = 0
 NO_INTERFACE = None  # Using this or '' will cause an exception
@@ -22,14 +22,14 @@ ANY_INTERFACE_IPV4 = '0.0.0.0'
 ANY_INTERFACE_IPV6 = '::'
 
 config = {
-    cheroot.wsgi.Server: {
+    raspimote_https.wsgi.Server: {
         'bind_addr': (NO_INTERFACE, EPHEMERAL_PORT),
         'wsgi_app': None,
     },
-    cheroot.server.HTTPServer: {
-        'bind_addr': (NO_INTERFACE, EPHEMERAL_PORT),
-        'gateway': cheroot.server.Gateway,
-    },
+    raspimote_https.server.HTTPServer: {
+        'raspimote_httpsaddr': (NO_INTERFACE, EPHEMERAL_PORT),
+        'gateway': raspimote_https.server.Gateway,
+   },
 }
 
 
@@ -64,14 +64,14 @@ def cheroot_server(server_factory):
 @pytest.fixture
 def wsgi_server():
     """Set up and tear down a Cheroot WSGI server instance."""
-    for srv in cheroot_server(cheroot.wsgi.Server):
+    for srv in cheroot_server(raspimote_https.wsgi.Server):
         yield srv
 
 
 @pytest.fixture
 def native_server():
     """Set up and tear down a Cheroot HTTP server instance."""
-    for srv in cheroot_server(cheroot.server.HTTPServer):
+    for srv in cheroot_server(raspimote_https.server.HTTPServer):
         yield srv
 
 

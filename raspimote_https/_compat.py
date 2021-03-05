@@ -1,5 +1,5 @@
 # pylint: disable=unused-import
-"""Compatibility code for using Cheroot with various versions of Python."""
+"""Compatibility code for using the web server with various versions of Python."""
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type

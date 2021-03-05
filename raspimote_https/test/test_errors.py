@@ -2,7 +2,7 @@
 
 import pytest
 
-from cheroot import errors
+from raspimote_https import errors
 
 from .._compat import IS_LINUX, IS_MACOS, IS_WINDOWS
 

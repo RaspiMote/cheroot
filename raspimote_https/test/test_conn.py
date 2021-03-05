@@ -16,9 +16,9 @@ import six
 import pytest
 from jaraco.text import trim, unwrap
 
-from cheroot.test import helper, webtest
-from cheroot._compat import IS_CI, IS_PYPY, IS_WINDOWS
-import cheroot.server
+from raspimote_https.test import helper, webtest
+from raspimote_https._compat import IS_CI, IS_PYPY, IS_WINDOWS
+import raspimote_https.server
 
 
 timeout = 1
@@ -1242,7 +1242,7 @@ class FaultyGetMap:
         """Intercept the calls to selector.get_map."""
         sabotage_targets = (
             conn for _, (_, _, _, conn) in self.original_get_map().items()
-            if isinstance(conn, cheroot.server.HTTPConnection)
+            if isinstance(conn, raspimote_https.server.HTTPConnection)
         ) if self.sabotage_conn and not self.conn_closed else ()
 
         for conn in sabotage_targets:

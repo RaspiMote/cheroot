@@ -1,6 +1,6 @@
 """Tests for :py:mod:`cheroot.makefile`."""
 
-from cheroot import makefile
+from raspimote_https import makefile
 
 
 __metaclass__ = type

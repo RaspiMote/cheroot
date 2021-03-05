@@ -4,7 +4,7 @@
 
 from __future__ import absolute_import, division, print_function
 
-from cheroot.wsgi import PathInfoDispatcher
+from raspimote_https.wsgi import PathInfoDispatcher
 
 
 def wsgi_invoke(app, environ):

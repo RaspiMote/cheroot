@@ -11,7 +11,7 @@ import sys
 import six
 import pytest
 
-from cheroot.cli import (
+from raspimote_https.cli import (
     Application,
     parse_wsgi_bind_addr,
 )

@@ -8,8 +8,8 @@ import requests
 from requests_toolbelt.sessions import BaseUrlSession as Session
 from jaraco.context import ExceptionTrap
 
-from cheroot import wsgi
-from cheroot._compat import IS_MACOS, IS_WINDOWS
+from raspimote_https import wsgi
+from raspimote_https._compat import IS_MACOS, IS_WINDOWS
 
 
 IS_SLOW_ENV = IS_MACOS or IS_WINDOWS

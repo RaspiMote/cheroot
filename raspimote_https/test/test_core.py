@@ -12,7 +12,7 @@ import pytest
 import six
 from six.moves import urllib
 
-from cheroot.test import helper
+from raspimote_https.test import helper
 
 
 HTTP_BAD_REQUEST = 400

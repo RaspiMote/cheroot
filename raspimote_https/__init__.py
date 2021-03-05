@@ -1,4 +1,4 @@
-"""High-performance, pure-Python HTTP server used by CherryPy."""
+"""Fork of Cheroot. It improves the web server, especially by adding verbose options. It is used as an HTTPS server in RaspiMote releases."""
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type

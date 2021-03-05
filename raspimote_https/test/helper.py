@@ -15,10 +15,10 @@ from six.moves import http_client
 
 import six
 
-import cheroot.server
-import cheroot.wsgi
+import raspimote_https.server
+import raspimote_https.wsgi
 
-from cheroot.test import webtest
+from raspimote_https.test import webtest
 
 log = logging.getLogger(__name__)
 thisdir = os.path.abspath(os.path.dirname(__file__))
@@ -38,8 +38,8 @@ class CherootWebCase(webtest.WebCase):
     scheme = 'http'
 
     available_servers = {
-        'wsgi': cheroot.wsgi.Server,
-        'native': cheroot.server.HTTPServer,
+        'wsgi': raspimote_https.wsgi.Server,
+        'native': raspimote_https.server.HTTPServer,
     }
 
     @classmethod
@@ -65,7 +65,7 @@ class CherootWebCase(webtest.WebCase):
 
         v = sys.version.split()[0]
         log.info('Python version used to run this test script: %s' % v)
-        log.info('Cheroot version: %s' % cheroot.__version__)
+        log.info('Cheroot version: %s' % raspimote_https.__version__)
         log.info('HTTP server version: %s%s' % (cls.httpserver.protocol, ssl))
         log.info('PID: %s' % os.getpid())
 

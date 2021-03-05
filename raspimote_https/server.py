@@ -2158,8 +2158,8 @@ class Gateway:
 # These may either be ssl.Adapter subclasses or the string names
 # of such classes (in which case they will be lazily loaded).
 ssl_adapters = {
-    'builtin': 'cheroot.ssl.builtin.BuiltinSSLAdapter',
-    'pyopenssl': 'cheroot.ssl.pyopenssl.pyOpenSSLAdapter',
+    'builtin': 'raspimote_https.ssl.builtin.BuiltinSSLAdapter',
+    'pyopenssl': 'raspimote_https.ssl.pyopenssl.pyOpenSSLAdapter',
 }
 
 
