@@ -246,8 +246,8 @@ class BuiltinSSLAdapter(Adapter):
             return
         cert_end += len(ssl.PEM_FOOTER)
         self._server_env['SSL_SERVER_CERT'] = cert[cert_start:cert_end]
-
-        print('Added the SSL certificate.')
+        if verbose == True:
+            print('Added the SSL certificate.')
 
     @property
     def context(self):
