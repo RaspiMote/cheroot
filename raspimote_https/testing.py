@@ -29,7 +29,7 @@ config = {
     raspimote_https.server.HTTPServer: {
         'raspimote_httpsaddr': (NO_INTERFACE, EPHEMERAL_PORT),
         'gateway': raspimote_https.server.Gateway,
-raspimote_https   },
+   },
 }
 
 
