@@ -382,6 +382,10 @@ class PathInfoDispatcher:
                 and WSGI app pairs
         """
         try:
+            app_name = apps.name
+        except AttributeError:
+            pass
+        try:
             apps = list(apps.items())
         except AttributeError:
             pass
@@ -395,7 +399,7 @@ class PathInfoDispatcher:
         # Use "" instead of "/".
         self.apps = [(p.rstrip('/'), a) for p, a in apps]
         if verbose == True:
-            print(f'Added {apps.name}.')
+            print(f'Added {app_name}.')
 
     def __call__(self, environ, start_response):
         """Process incoming WSGI request.
