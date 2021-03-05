@@ -86,7 +86,7 @@ class Server(server.HTTPServer):
             accepted_queue_size=accepted_queue_size,
             accepted_queue_timeout=accepted_queue_timeout,
         )
-        if verbose == True:
+        if verbose:
             print(f'Configured web server to serve on host {bind_addr[0]} and on port {bind_addr[1]}.')
 
     @property
@@ -394,9 +394,9 @@ class PathInfoDispatcher:
         # The path_prefix strings must start, but not end, with a slash.
         # Use "" instead of "/".
         self.apps = [(p.rstrip('/'), a) for p, a in apps]
-        if verbose == True and len(apps) == 1:
+        if verbose and len(apps) == 1:
             print(f'Added app "{apps[0][1].name}".')
-        elif verbose == True:
+        elif verbose:
             print('Added apps.')
 
     def __call__(self, environ, start_response):

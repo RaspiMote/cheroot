@@ -223,7 +223,7 @@ class ConnectionManager:
                     # has read from it and returned it via put()
                     self._selector.unregister(sock_fd)
                     self.server.process_conn(conn)
-            if k == False and verbose == True:
+            if k == False and verbose:
                 print("Serving.")
                 k = True
             now = time.time()
