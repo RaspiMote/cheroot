@@ -382,10 +382,6 @@ class PathInfoDispatcher:
                 and WSGI app pairs
         """
         try:
-            app_name = apps.name
-        except AttributeError:
-            pass
-        try:
             apps = list(apps.items())
         except AttributeError:
             pass
@@ -398,8 +394,10 @@ class PathInfoDispatcher:
         # The path_prefix strings must start, but not end, with a slash.
         # Use "" instead of "/".
         self.apps = [(p.rstrip('/'), a) for p, a in apps]
-        if verbose == True:
-            print(f'Added {app_name}.')
+        if verbose == True and len(apps) == 1:
+            print(f'Added app "{apps[0][1].name}".')
+        elif verbose == True:
+            print('Added apps.')
 
     def __call__(self, environ, start_response):
         """Process incoming WSGI request.
