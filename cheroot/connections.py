@@ -181,7 +181,7 @@ class ConnectionManager:
         while self._serving:
             time.sleep(0.01)
 
-    def run(self, expiration_interval, verbose):
+    def run(self, expiration_interval, verbose=False):
         """Run the connections selector indefinitely.
 
         Args:
@@ -202,7 +202,7 @@ class ConnectionManager:
         finally:
             self._serving = False
 
-    def _run(self, expiration_interval, verbose):
+    def _run(self, expiration_interval, verbose=False):
         last_expiration_check = time.time()
         k = False
         while not self._stop_requested:

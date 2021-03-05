@@ -1803,7 +1803,7 @@ class HTTPServer:
         self.ready = True
         self._start_time = time.time()
 
-    def serve(self, verbose):
+    def serve(self, verbose=False):
         """Serve requests, after invoking :func:`prepare()`."""
         while self.ready and not self.interrupt:
             try:
@@ -1824,7 +1824,7 @@ class HTTPServer:
             if self.interrupt:
                 raise self.interrupt
 
-    def start(self, verbose):
+    def start(self, verbose=False):
         """Run the server forever.
 
         It is shortcut for invoking :func:`prepare()` then :func:`serve()`.

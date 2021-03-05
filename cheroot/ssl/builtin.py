@@ -209,7 +209,7 @@ class BuiltinSSLAdapter(Adapter):
 
     def __init__(
             self, certificate, private_key, certificate_chain=None,
-            ciphers=None,
+            ciphers=None, verbose=False
     ):
         """Set up context in addition to base class properties if available."""
         if ssl is None:
@@ -246,6 +246,8 @@ class BuiltinSSLAdapter(Adapter):
             return
         cert_end += len(ssl.PEM_FOOTER)
         self._server_env['SSL_SERVER_CERT'] = cert[cert_start:cert_end]
+
+        print('Added the SSL certificate.')
 
     @property
     def context(self):

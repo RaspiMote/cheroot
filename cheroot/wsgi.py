@@ -371,7 +371,7 @@ wsgi_gateways = Gateway.gateway_map()
 class PathInfoDispatcher:
     """A WSGI dispatcher for dispatch based on the PATH_INFO."""
 
-    def __init__(self, apps):
+    def __init__(self, apps, verbose=False):
         """Initialize path info WSGI app dispatcher.
 
         Args:
@@ -391,6 +391,8 @@ class PathInfoDispatcher:
         # The path_prefix strings must start, but not end, with a slash.
         # Use "" instead of "/".
         self.apps = [(p.rstrip('/'), a) for p, a in apps]
+        if verbose == True:
+            print(f'Added {apps.name}.')
 
     def __call__(self, environ, start_response):
         """Process incoming WSGI request.
