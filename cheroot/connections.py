@@ -224,7 +224,7 @@ class ConnectionManager:
                     self._selector.unregister(sock_fd)
                     self.server.process_conn(conn)
             if k == False and verbose == True:
-                print("Cheroot is serving.")
+                print("Serving.")
                 k = True
             now = time.time()
             
