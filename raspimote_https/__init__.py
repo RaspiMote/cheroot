@@ -10,6 +10,6 @@ except ImportError:
 
 
 try:
-    __version__ = pkg_resources.get_distribution('cheroot').version
+    __version__ = pkg_resources.get_distribution('raspimote_https').version
 except Exception:
     __version__ = 'unknown'
