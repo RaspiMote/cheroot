@@ -352,7 +352,7 @@ def test_tls_client_auth(  # noqa: C901  # FIXME
             return
 
         # xfail some flaky tests
-        # https://github.com/cherrypy/cheroot/issues/237
+        # https://github.com/cherrypy/raspimote_https/issues/237
         issue_237 = (
             IS_MACOS
             and adapter_type == 'builtin'
@@ -634,7 +634,7 @@ def test_http_over_https_error(
 ):
     """Ensure that connecting over HTTP to HTTPS port is handled."""
     # disable some flaky tests
-    # https://github.com/cherrypy/cheroot/issues/225
+    # https://github.com/cherrypy/raspimote_https/issues/225
     issue_225 = (
         IS_MACOS
         and adapter_type == 'builtin'

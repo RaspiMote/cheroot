@@ -1,4 +1,4 @@
-"""This class holds Cheroot WSGI server implementation.
+"""This class holds RaspiMote_https WSGI server implementation.
 
 Simplest example on how to use this server::
 
@@ -14,7 +14,7 @@ Simplest example on how to use this server::
     server = wsgi.Server(addr, my_crazy_app)
     server.start()
 
-The Cheroot WSGI server can serve as many WSGI applications
+The RaspiMote_https WSGI server can serve as many WSGI applications
 as you want in one instance by using a PathInfoDispatcher::
 
     path_map = {

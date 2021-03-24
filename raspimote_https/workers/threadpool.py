@@ -62,7 +62,7 @@ class WorkerThread(threading.Thread):
         """Initialize WorkerThread instance.
 
         Args:
-            server (cheroot.server.HTTPServer): web server object
+            server (raspimote_https.server.HTTPServer): web server object
                 receiving this request
         """
         self.ready = False
@@ -153,7 +153,7 @@ class ThreadPool:
         """Initialize HTTP requests queue instance.
 
         Args:
-            server (cheroot.server.HTTPServer): web server object
+            server (raspimote_https.server.HTTPServer): web server object
                 receiving this request
             min (int): minimum number of worker threads
             max (int): maximum number of worker threads
@@ -195,7 +195,7 @@ class ThreadPool:
         """Put request into queue.
 
         Args:
-            obj (:py:class:`~cheroot.server.HTTPConnection`): HTTP connection
+            obj (:py:class:`~raspimote_https.server.HTTPConnection`): HTTP connection
                 waiting to be processed
         """
         self._queue.put(obj, block=True, timeout=self._queue_put_timeout)

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Collection of exceptions raised and/or processed by Cheroot."""
+"""Collection of exceptions raised and/or processed by RaspiMote_https."""
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
@@ -72,7 +72,7 @@ acceptable_sock_shutdown_error_codes = {
 * ECONNRESET — connection is reset by the peer, we received a TCP RST packet
 
 Refs:
-* https://github.com/cherrypy/cheroot/issues/341#issuecomment-735884889
+* https://github.com/cherrypy/raspimote_https/issues/341#issuecomment-735884889
 * https://bugs.python.org/issue30319
 * https://bugs.python.org/issue30329
 * https://github.com/python/cpython/commit/83a2c28

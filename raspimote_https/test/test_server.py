@@ -58,7 +58,7 @@ def unix_abstract_sock():
             'socket namespace'.format(os=SYS_PLATFORM),
         )
     return b''.join((
-        b'\x00cheroot-test-socket',
+        b'\x00raspimote_https-test-socket',
         ntob(str(uuid.uuid4())),
     )).decode()
 

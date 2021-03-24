@@ -43,7 +43,7 @@ apidoc_extra_args = [
     '--implicit-namespaces',
     '--private',  # include “_private” modules
 ]
-apidoc_module_dir = '../cheroot'
+apidoc_module_dir = '../raspimote_https'
 apidoc_module_first = False
 apidoc_output_dir = 'pkg'
 apidoc_separate_modules = True
@@ -66,7 +66,7 @@ scm_version_title_settings = {
 
 github_url = 'https://github.com'
 github_repo_org = 'cherrypy'
-github_repo_name = 'cheroot'
+github_repo_name = 'raspimote_https'
 github_repo_slug = f'{github_repo_org}/{github_repo_name}'
 github_repo_url = f'{github_url}/{github_repo_slug}'
 cp_github_repo_url = f'{github_url}/{github_repo_org}/cherrypy'
@@ -93,20 +93,20 @@ intersphinx_mapping = {
 
 linkcheck_ignore = [
     r'http://localhost:\d+/',  # local URLs
-    r'https://codecov\.io/gh/cherrypy/cheroot/branch/master/graph/badge\.svg',
-    r'https://github\.com/cherrypy/cheroot/actions',  # 404 if no auth
+    r'https://codecov\.io/gh/cherrypy/raspimote_https/branch/master/graph/badge\.svg',
+    r'https://github\.com/cherrypy/raspimote_https/actions',  # 404 if no auth
 
     # Too many links to GitHub so they cause
     # "429 Client Error: too many requests for url"
     # Ref: https://github.com/sphinx-doc/sphinx/issues/7388
-    r'https://github\.com/cherrypy/cheroot/issues',
-    r'https://github\.com/cherrypy/cheroot/pull',
+    r'https://github\.com/cherrypy/raspimote_https/issues',
+    r'https://github\.com/cherrypy/raspimote_https/pull',
     r'https://github\.com/cherrypy/cherrypy/issues',
     r'https://github\.com/cherrypy/cherrypy/pull',
 
     # Requires a more liberal 'Accept: ' HTTP request header:
     # Ref: https://github.com/sphinx-doc/sphinx/issues/7247
-    r'https://github\.com/cherrypy/cheroot/workflows/[^/]+/badge\.svg',
+    r'https://github\.com/cherrypy/raspimote_https/workflows/[^/]+/badge\.svg',
 
     # Has an ephemeral anchor (line-range) but actual HTML has separate per-
     # line anchors.
@@ -123,7 +123,7 @@ nitpick_ignore = [
     ('py:class', '_pyio.BufferedWriter'),
     ('py:class', '_pyio.BufferedReader'),
     ('py:class', 'unittest.case.TestCase'),
-    ('py:meth', 'cheroot.connections.ConnectionManager.get_conn'),
+    ('py:meth', 'raspimote_https.connections.ConnectionManager.get_conn'),
 ]
 
 # Ref:

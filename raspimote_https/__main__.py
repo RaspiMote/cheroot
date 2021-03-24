@@ -1,4 +1,4 @@
-"""Stub for accessing the Cheroot CLI tool."""
+"""Stub for accessing the RaspiMote_https CLI tool."""
 
 from .cli import main
 

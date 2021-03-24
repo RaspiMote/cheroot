@@ -12,7 +12,7 @@ from sphinx.util.nodes import nodes
 
 import dateutil.parser
 
-from cheroot import __version__
+from raspimote_https import __version__
 
 
 _SCM_COMMANDS = {

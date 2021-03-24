@@ -1,6 +1,6 @@
 """Pytest configuration module.
 
-Contains fixtures, which are tightly bound to the Cheroot framework
+Contains fixtures, which are tightly bound to the RaspiMote_https framework
 itself, useless for end-users' app testing.
 """
 

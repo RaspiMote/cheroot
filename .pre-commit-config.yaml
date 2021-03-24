@@ -36,8 +36,8 @@ repos:
   - id: name-tests-test
     args:
     - --django
-    exclude: cheroot/test/(helper|webtest|_pytest_plugin).py
-    files: cheroot/test/.+\.py$
+    exclude: raspimote_https/test/(helper|webtest|_pytest_plugin).py
+    files: raspimote_https/test/.+\.py$
   - id: check-added-large-files
   - id: check-byte-order-marker
   - id: check-case-conflict

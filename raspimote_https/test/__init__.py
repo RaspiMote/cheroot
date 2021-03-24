@@ -1,1 +1,1 @@
-"""Cheroot test suite."""
+"""RaspiMote_https test suite."""

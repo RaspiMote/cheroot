@@ -1,6 +1,6 @@
 """Local pytest plugin.
 
-Contains hooks, which are tightly bound to the Cheroot framework
+Contains hooks, which are tightly bound to the RaspiMote_https framework
 itself, useless for end-users' app testing.
 """
 

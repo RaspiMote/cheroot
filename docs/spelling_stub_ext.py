@@ -6,7 +6,7 @@ from sphinx.application import Sphinx
 from sphinx.util.docutils import SphinxDirective
 from sphinx.util.nodes import nodes
 
-from cheroot import __version__
+from raspimote_https import __version__
 
 
 class SpellingNoOpDirective(SphinxDirective):

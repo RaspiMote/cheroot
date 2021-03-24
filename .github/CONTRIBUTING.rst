@@ -1,8 +1,8 @@
-Read and contribute to Cheroot
+Read and contribute to RaspiMote_https
 ------------------------------
 
 Make sure you read the `README
-<https://github.com/cherrypy/cheroot/blob/master/README.rst>`_.
+<https://github.com/cherrypy/raspimote_https/blob/master/README.rst>`_.
 Also **ensure you set up pre-commit utility correctly** and
 tests pass in GitHub Actions CI/CD workflows.
 

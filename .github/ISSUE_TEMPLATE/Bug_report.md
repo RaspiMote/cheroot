@@ -11,7 +11,7 @@ labels: bug, triage
 Thanks for filing an issue!  Please keep keep issues limited to bug reports,
 feature requests, and other general issues. For support questions, please feel
 free to reach out on stackoverflow:
-https://stackoverflow.com/questions/tagged/cheroot+or+cherrypy
+https://stackoverflow.com/questions/tagged/raspimote_https+or+cherrypy
 
 **** /DELETE THIS BLOCK ****
 -->
@@ -52,8 +52,7 @@ If applicable, add tracebacks/logs to help explain your problem.
 <!--
 Please complete the following information:
 -->
-- Cheroot version: X.X.X
-- CherryPy version: X.X.X (if applicable)
+- RaspiMote_https version: X.X.X
 - Python version: 3.8.X
 - OS: XXX
 - Browser: [all | Chrome XX | Firefox XX | IE XX | Safari XX | Mobile Chrome XX | Android X.X Web Browser | iOS XX Safari | iOS XX UIWebView | iOS XX WKWebView ]

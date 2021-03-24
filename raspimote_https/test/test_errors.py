@@ -1,4 +1,4 @@
-"""Test suite for ``cheroot.errors``."""
+"""Test suite for ``raspimote_https.errors``."""
 
 import pytest
 

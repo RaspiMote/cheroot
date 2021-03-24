@@ -33,8 +33,8 @@ config = {
 }
 
 
-def cheroot_server(server_factory):
-    """Set up and tear down a Cheroot server instance."""
+def raspimote_https_server(server_factory):
+    """Set up and tear down a RaspiMote_https server instance."""
     conf = config[server_factory].copy()
     bind_port = conf.pop('bind_addr')[-1]
 
@@ -63,15 +63,15 @@ def cheroot_server(server_factory):
 
 @pytest.fixture
 def wsgi_server():
-    """Set up and tear down a Cheroot WSGI server instance."""
-    for srv in cheroot_server(raspimote_https.wsgi.Server):
+    """Set up and tear down a RaspiMote_https WSGI server instance."""
+    for srv in raspimote_https_server(raspimote_https.wsgi.Server):
         yield srv
 
 
 @pytest.fixture
 def native_server():
-    """Set up and tear down a Cheroot HTTP server instance."""
-    for srv in cheroot_server(raspimote_https.server.HTTPServer):
+    """Set up and tear down a RaspiMote_https HTTP server instance."""
+    for srv in raspimote_https_server(raspimote_https.server.HTTPServer):
         yield srv
 
 

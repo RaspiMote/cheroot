@@ -1,4 +1,4 @@
-Welcome to Cheroot documentation!
+Welcome to RaspiMote_https documentation!
 =================================
 
 .. include:: ../README.rst
@@ -16,7 +16,7 @@ Welcome to Cheroot documentation!
    pkg/modules
 
 
-`Cheroot <https://github.com/cherrypy/cheroot>`_ is the high-performance,
+`RaspiMote_https <https://github.com/cherrypy/raspimote_https>`_ is the high-performance,
 pure-Python HTTP server used by `CherryPy <https://www.cherrypy.org>`_.
 
 

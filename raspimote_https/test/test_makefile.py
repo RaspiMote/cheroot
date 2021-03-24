@@ -1,4 +1,4 @@
-"""Tests for :py:mod:`cheroot.makefile`."""
+"""Tests for :py:mod:`raspimote_https.makefile`."""
 
 from raspimote_https import makefile
 

@@ -279,7 +279,7 @@ def test_content_length_required(test_client):
 
 
 @pytest.mark.xfail(
-    reason='https://github.com/cherrypy/cheroot/issues/106',
+    reason='https://github.com/cherrypy/raspimote_https/issues/106',
     strict=False,  # sometimes it passes
 )
 def test_large_request(test_client_with_defaults):

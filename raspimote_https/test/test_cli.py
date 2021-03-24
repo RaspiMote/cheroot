@@ -30,10 +30,10 @@ from raspimote_https.cli import (
         ('foo', ('foo', None)),
         ('123456789', ('123456789', None)),
         # unix sockets
-        ('/tmp/cheroot.sock', '/tmp/cheroot.sock'),
+        ('/tmp/raspimote_https.sock', '/tmp/raspimote_https.sock'),
         ('/tmp/some-random-file-name', '/tmp/some-random-file-name'),
         # abstract sockets
-        ('@cheroot', '\x00cheroot'),
+        ('@raspimote_https', '\x00raspimote_https'),
     ),
 )
 def test_parse_wsgi_bind_addr(raw_bind_addr, expected_bind_addr):

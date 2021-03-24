@@ -59,7 +59,7 @@ class _ThreadsafeSelector:
     The expected read/write patterns are:
       * :py:func:`~iter`: selector thread
       * :py:meth:`register`: selector thread and threadpool,
-        via :py:meth:`~cheroot.workers.threadpool.ThreadPool.put`
+        via :py:meth:`~raspimote_https.workers.threadpool.ThreadPool.put`
       * :py:meth:`unregister`: selector thread only
 
     Notably, this means :py:class:`_ThreadsafeSelector` never needs to worry
@@ -122,7 +122,7 @@ class ConnectionManager:
         """Initialize ConnectionManager object.
 
         Args:
-            server (cheroot.server.HTTPServer): web server object
+            server (raspimote_https.server.HTTPServer): web server object
                 that uses this ConnectionManager instance.
         """
         self._serving = False
@@ -140,7 +140,7 @@ class ConnectionManager:
         """Put idle connection into the ConnectionManager to be managed.
 
         :param conn: HTTP connection to be managed
-        :type conn: cheroot.server.HTTPConnection
+        :type conn: raspimote_https.server.HTTPConnection
         """
         conn.last_used = time.time()
         # if this conn doesn't have any more data waiting to be read,

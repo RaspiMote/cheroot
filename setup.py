@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""Cheroot package setuptools installer."""
+"""RaspiMote_https package setuptools installer."""
 
 import setuptools
 

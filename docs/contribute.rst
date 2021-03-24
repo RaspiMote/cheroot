@@ -27,17 +27,17 @@ First-time setup
 
 - Create and log in to a `GitHub`_ account
 
-- `Fork`_ Cheroot to your GitHub account by clicking the Fork button
+- `Fork`_ RaspiMote_https to your GitHub account by clicking the Fork button
 
 - `Clone`_ your fork locally::
 
-    $ git clone https://github.com/{username}/cheroot
-    $ cd cheroot
+    $ git clone https://github.com/{username}/raspimote_https
+    $ cd raspimote_https
 
 * Also, you can `clone`_ fork using `ssh`_::
 
-    $ git clone git@github.com:{username}/cheroot.git
-    $ cd cheroot
+    $ git clone git@github.com:{username}/raspimote_https.git
+    $ cd raspimote_https
 
 - To create a new `branch`_ and switch to it::
 
@@ -67,7 +67,7 @@ Once you finished coding, you are recommended to do the following steps:
 
 Run one test with Python3.6::
 
-    $ tox -e py36 -- cheroot/test/test_name.py
+    $ tox -e py36 -- raspimote_https/test/test_name.py
 
 **``tox``** — Run all tests using the Python version where `python` command
 currently points to which is specified in ``tox`` settings::

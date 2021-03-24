@@ -1,4 +1,4 @@
-"""A library of helper functions for the Cheroot test suite."""
+"""A library of helper functions for the RaspiMote_https test suite."""
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
@@ -31,7 +31,7 @@ config = {
 }
 
 
-class CherootWebCase(webtest.WebCase):
+class RaspiMote_httpsWebCase(webtest.WebCase):
     """Helper class for a web app test suite."""
 
     script_name = ''
@@ -65,7 +65,7 @@ class CherootWebCase(webtest.WebCase):
 
         v = sys.version.split()[0]
         log.info('Python version used to run this test script: %s' % v)
-        log.info('Cheroot version: %s' % raspimote_https.__version__)
+        log.info('RaspiMote_https version: %s' % raspimote_https.__version__)
         log.info('HTTP server version: %s%s' % (cls.httpserver.protocol, ssl))
         log.info('PID: %s' % os.getpid())
 

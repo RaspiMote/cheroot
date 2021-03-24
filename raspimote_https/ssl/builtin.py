@@ -1,5 +1,5 @@
 """
-A library for integrating Python's builtin :py:mod:`ssl` library with Cheroot.
+A library for integrating Python's builtin :py:mod:`ssl` library with RaspiMote_https.
 
 The :py:mod:`ssl` module must be importable for SSL functionality.
 
@@ -57,7 +57,7 @@ def _loopback_for_cert_thread(context, server):
     # As we only care about parsing the certificate, the failure of
     # which will cause an exception in ``_loopback_for_cert``,
     # we can safely ignore connection and ssl related exceptions. Ref:
-    # https://github.com/cherrypy/cheroot/issues/302#issuecomment-662592030
+    # https://github.com/cherrypy/raspimote_https/issues/302#issuecomment-662592030
     with suppress(ssl.SSLError, OSError):
         with context.wrap_socket(
                 server, do_handshake_on_connect=True, server_side=True,
@@ -144,7 +144,7 @@ def _sni_callback(sock, sni, context):
 
 
 class BuiltinSSLAdapter(Adapter):
-    """Wrapper for integrating Python's builtin :py:mod:`ssl` with Cheroot."""
+    """Wrapper for integrating Python's builtin :py:mod:`ssl` with RaspiMote_https."""
 
     certificate = None
     """The file name of the server SSL certificate."""

@@ -1,20 +1,20 @@
 """
-A library for integrating :doc:`pyOpenSSL <pyopenssl:index>` with Cheroot.
+A library for integrating :doc:`pyOpenSSL <pyopenssl:index>` with RaspiMote_https.
 
 The :py:mod:`OpenSSL <pyopenssl:OpenSSL>` module must be importable
 for SSL/TLS/HTTPS functionality.
 You can obtain it from `here <https://github.com/pyca/pyopenssl>`_.
 
 To use this module, set :py:attr:`HTTPServer.ssl_adapter
-<cheroot.server.HTTPServer.ssl_adapter>` to an instance of
-:py:class:`ssl.Adapter <cheroot.ssl.Adapter>`.
+<raspimote_https.server.HTTPServer.ssl_adapter>` to an instance of
+:py:class:`ssl.Adapter <raspimote_https.ssl.Adapter>`.
 There are two ways to use :abbr:`TLS (Transport-Level Security)`:
 
 Method One
 ----------
 
  * :py:attr:`ssl_adapter.context
-   <cheroot.ssl.pyopenssl.pyOpenSSLAdapter.context>`: an instance of
+   <raspimote_https.ssl.pyopenssl.pyOpenSSLAdapter.context>`: an instance of
    :py:class:`SSL.Context <pyopenssl:OpenSSL.SSL.Context>`.
 
 If this is not None, it is assumed to be an :py:class:`SSL.Context
@@ -34,14 +34,14 @@ Method Two (shortcut)
 ---------------------
 
  * :py:attr:`ssl_adapter.certificate
-   <cheroot.ssl.pyopenssl.pyOpenSSLAdapter.certificate>`: the file name
+   <raspimote_https.ssl.pyopenssl.pyOpenSSLAdapter.certificate>`: the file name
    of the server's TLS certificate.
  * :py:attr:`ssl_adapter.private_key
-   <cheroot.ssl.pyopenssl.pyOpenSSLAdapter.private_key>`: the file name
+   <raspimote_https.ssl.pyopenssl.pyOpenSSLAdapter.private_key>`: the file name
    of the server's private key file.
 
 Both are :py:data:`None` by default. If :py:attr:`ssl_adapter.context
-<cheroot.ssl.pyopenssl.pyOpenSSLAdapter.context>` is :py:data:`None`,
+<raspimote_https.ssl.pyopenssl.pyOpenSSLAdapter.context>` is :py:data:`None`,
 but ``.private_key`` and ``.certificate`` are both given and valid, they
 will be read, and the context will be automatically created from them.
 
@@ -73,7 +73,7 @@ except ImportError:
     SSL = None
 
 from . import Adapter
-from .. import errors, server as cheroot_server
+from .. import errors, server as raspimote_https_server
 from ..makefile import StreamReader, StreamWriter
 
 
@@ -245,7 +245,7 @@ class SSLConnection:
 
 
 class pyOpenSSLAdapter(Adapter):
-    """A wrapper for integrating pyOpenSSL with Cheroot."""
+    """A wrapper for integrating pyOpenSSL with RaspiMote_https."""
 
     certificate = None
     """The file name of the server's TLS certificate."""
@@ -315,7 +315,7 @@ class pyOpenSSLAdapter(Adapter):
             'wsgi.url_scheme': 'https',
             'HTTPS': 'on',
             'SSL_VERSION_INTERFACE': '%s %s/%s Python/%s' % (
-                cheroot_server.HTTPServer.version,
+                raspimote_https_server.HTTPServer.version,
                 OpenSSL.version.__title__, OpenSSL.version.__version__,
                 sys.version,
             ),
@@ -379,4 +379,4 @@ class pyOpenSSLAdapter(Adapter):
         # This is from past:
         # TODO: figure out what it's meant for
         else:
-            return cheroot_server.CP_fileobject(sock, mode, bufsize)
+            return raspimote_https_server.CP_fileobject(sock, mode, bufsize)

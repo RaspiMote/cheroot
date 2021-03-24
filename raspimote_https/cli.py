@@ -1,4 +1,4 @@
-"""Command line tool for starting a Cheroot WSGI/HTTP server instance.
+"""Command line tool for starting a RaspiMote_https WSGI/HTTP server instance.
 
 Basic usage:
 
@@ -6,21 +6,21 @@ Basic usage:
 
     $ # Start a server on 127.0.0.1:8000 with the default settings
     $ # for the WSGI app myapp/wsgi.py:application()
-    $ cheroot myapp.wsgi
+    $ raspimote_https myapp.wsgi
 
     $ # Start a server on 0.0.0.0:9000 with 8 threads
     $ # for the WSGI app myapp/wsgi.py:main_app()
-    $ cheroot myapp.wsgi:main_app --bind 0.0.0.0:9000 --threads 8
+    $ raspimote_https myapp.wsgi:main_app --bind 0.0.0.0:9000 --threads 8
 
-    $ # Start a server for the cheroot.server.Gateway subclass
+    $ # Start a server for the raspimote_https.server.Gateway subclass
     $ # myapp/gateway.py:HTTPGateway
-    $ cheroot myapp.gateway:HTTPGateway
+    $ raspimote_https myapp.gateway:HTTPGateway
 
     $ # Start a server on the UNIX socket /var/spool/myapp.sock
-    $ cheroot myapp.wsgi --bind /var/spool/myapp.sock
+    $ raspimote_https myapp.wsgi --bind /var/spool/myapp.sock
 
-    $ # Start a server on the abstract UNIX socket CherootServer
-    $ cheroot myapp.wsgi --bind @CherootServer
+    $ # Start a server on the abstract UNIX socket RaspiMote_httpsServer
+    $ raspimote_https myapp.wsgi --bind @RaspiMote_httpsServer
 
 .. spelling::
 
@@ -43,7 +43,7 @@ __metaclass__ = type
 
 
 class BindLocation:
-    """A class for storing the bind location for a Cheroot instance."""
+    """A class for storing the bind location for a RaspiMote_https instance."""
 
 
 class TCPSocket(BindLocation):
@@ -96,7 +96,7 @@ class Application:
         if not callable(wsgi_app):
             raise TypeError(
                 'Application must be a callable object or '
-                'cheroot.server.Gateway subclass',
+                'raspimote_https.server.Gateway subclass',
             )
         self.wsgi_app = wsgi_app
 
@@ -167,7 +167,7 @@ _arg_spec = {
     '_wsgi_app': {
         'metavar': 'APP_MODULE',
         'type': Application.resolve,
-        'help': 'WSGI application callable or cheroot.server.Gateway subclass',
+        'help': 'WSGI application callable or raspimote_https.server.Gateway subclass',
     },
     '--bind': {
         'metavar': 'ADDRESS',
@@ -232,9 +232,9 @@ _arg_spec = {
 
 
 def main():
-    """Create a new Cheroot instance with arguments from the command line."""
+    """Create a new RaspiMote_https instance with arguments from the command line."""
     parser = argparse.ArgumentParser(
-        description='Start an instance of the Cheroot WSGI/HTTP server.',
+        description='Start an instance of the RaspiMote_https WSGI/HTTP server.',
     )
     for arg, spec in _arg_spec.items():
         parser.add_argument(arg, **spec)

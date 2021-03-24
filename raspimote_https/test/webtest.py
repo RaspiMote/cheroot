@@ -193,7 +193,7 @@ class WebCase(unittest.TestCase):
             >>> class MyAppWebCase(WebCase):
             ...     def getPage(url, *args, **kwargs):
             ...         super(MyAppWebCase, self).getPage(
-            ...             cheroot.test.webtest.strip_netloc(url),
+            ...             raspimote_https.test.webtest.strip_netloc(url),
             ...             *args, **kwargs
             ...         )
 

@@ -1532,7 +1532,7 @@ class HTTPServer:
     expired connections (default 0.5).
     """
 
-    version = 'Cheroot/{version!s}'.format(version=__version__)
+    version = 'RaspiMote_https/{version!s}'.format(version=__version__)
     """A version string for the HTTPServer."""
 
     software = None
@@ -1559,7 +1559,7 @@ class HTTPServer:
     ssl_adapter = None
     """An instance of ``ssl.Adapter`` (or a subclass).
 
-    Ref: :py:class:`ssl.Adapter <cheroot.ssl.Adapter>`.
+    Ref: :py:class:`ssl.Adapter <raspimote_https.ssl.Adapter>`.
 
     You must have the corresponding TLS driver library installed.
     """
@@ -1652,7 +1652,7 @@ class HTTPServer:
             ),
             'Worker Threads': {},
         }
-        logging.statistics['Cheroot HTTPServer %d' % id(self)] = self.stats
+        logging.statistics['RaspiMote_https HTTPServer %d' % id(self)] = self.stats
 
     def runtime(self):
         """Return server uptime."""
@@ -1990,7 +1990,7 @@ class HTTPServer:
 
             Refs:
             * https://msdn.microsoft.com/en-us/library/ms740621(v=vs.85).aspx
-            * https://github.com/cherrypy/cheroot/issues/114
+            * https://github.com/cherrypy/raspimote_https/issues/114
             * https://gavv.github.io/blog/ephemeral-port-reuse/
             """
             sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -2074,7 +2074,7 @@ class HTTPServer:
         """Perform the shutdown of this server and save the exception.
 
         Typically invoked by a worker thread in
-        :py:mod:`~cheroot.workers.threadpool`, the exception is raised
+        :py:mod:`~raspimote_https.workers.threadpool`, the exception is raised
         from the thread running :py:meth:`serve` once :py:meth:`stop`
         has completed.
         """

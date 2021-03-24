@@ -1023,7 +1023,7 @@ def test_No_Message_Body(test_client):
         trim("""
         Headers from earlier request leak into the request
         line for a subsequent request, resulting in 400
-        instead of 413. See cherrypy/cheroot#69 for details.
+        instead of 413. See cherrypy/raspimote_https#69 for details.
         """),
     ),
 )
@@ -1256,7 +1256,7 @@ class FaultyGetMap:
 def test_invalid_selected_connection(test_client, monkeypatch):
     """Test the error handling segment of HTTP connection selection.
 
-    See :py:meth:`cheroot.connections.ConnectionManager.get_conn`.
+    See :py:meth:`raspimote_https.connections.ConnectionManager.get_conn`.
     """
     # patch the select method
     faux_select = FaultySelect(
