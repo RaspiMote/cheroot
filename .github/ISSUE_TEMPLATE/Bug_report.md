@@ -5,17 +5,6 @@ labels: bug, triage
 
 ---
 
-<!--
-**** DELETE THIS BLOCK ****
-
-Thanks for filing an issue!  Please keep keep issues limited to bug reports,
-feature requests, and other general issues. For support questions, please feel
-free to reach out on stackoverflow:
-https://stackoverflow.com/questions/tagged/raspimote_https+or+cherrypy
-
-**** /DELETE THIS BLOCK ****
--->
-
 ❓ **I'm submitting a ...**
 - [X] 🐞 bug report
 - [ ] 🐣 feature request
