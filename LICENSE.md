@@ -1,4 +1,4 @@
-Copyright © 2004-2021, CherryPy Team (team@cherrypy.org)
+Copyright © 2004-2021, RaspiMote (hello@raspimote.tk) - originally developed by the CherryPy Team (team@cherrypy.org))
 
 All rights reserved.
 
