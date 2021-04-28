@@ -3,5 +3,3 @@
 
 # Needed for setuptools-scm-git-archive
 .git_archival.txt  export-subst
-
-CHANGES.rst        merge=union
